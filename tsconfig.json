@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // "target": "esnext",
+    // "module": "esnext",
+    "target": "es6",
+    "module": "ESNext",
+    "declaration": false,
+    "removeComments": true,
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["src/*/index.ts"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "tests"]
+}
