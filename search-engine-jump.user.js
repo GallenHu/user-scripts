@@ -4,7 +4,6 @@
 // @version          0.1
 // @match            *://www.google.com/search*
 // @match            *://www.baidu.com/s*
-// @grant            window.onurlchange
 // @namespace        https://github.com/GallenHu/user-scripts
 // @homepage         https://github.com/GallenHu
 // @author           Gallen
