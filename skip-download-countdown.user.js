@@ -3,6 +3,7 @@
 // @description      跳过下载前的倒计时.支持:讯牛
 // @version          0.1
 // @match            *://www.xunniufile.com/*
+// @match            *://www.xunniupan.co/*
 // @grant            GM_registerMenuCommand
 // @grant            unsafeWindow
 // @namespace        https://github.com/GallenHu/user-scripts
