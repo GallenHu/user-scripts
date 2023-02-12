@@ -6,7 +6,5 @@
   "require": ["https://cdn.staticfile.org/jquery/1.12.2/jquery.min.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"],
   "resource": ["IMPORTED_CSS https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"],
   "grant": ["GM_getResourceText", "GM_addStyle"],
-  "updateURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/arai2-download-netdisk.user.js",
-  "downloadURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/arai2-download-netdisk.user.js",
   "icon": "https://www.baidu.com/favicon.ico"
 }

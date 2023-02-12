@@ -44,7 +44,7 @@ class MetaPlugin {
           // 排序
           const orderKeys = ["name", "name:zh-CN", "description", "version", "match", "grant"];
           const sortKeys = (key1, key2) => {
-            const getIndex = (k) => orderKeys.indexOf(k) === -1 ? 999 : orderKeys.indexOf(k);
+            const getIndex = k => (orderKeys.indexOf(k) === -1 ? 999 : orderKeys.indexOf(k));
             return getIndex(key1) - getIndex(key2);
           };
 
@@ -65,14 +65,21 @@ class MetaPlugin {
 
               let map = new Map(Object.entries(Object.assign({}, commonMeta, meta)));
               if (!meta.name) map.set("name", chunk.name);
+              map.set(
+                "updateURL",
+                `https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/${chunk.name}.user.js`
+              );
+              map.set(
+                "downloadURL",
+                `https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/${chunk.name}.user.js`
+              );
+
               map = new Map([...map.entries()].sort((a, b) => sortKeys(a[0], b[0])));
 
               let commentsStr = "// ==UserScript==\n";
               commentsStr += mapToComment(map);
               commentsStr += "\n// ==/UserScript==\n";
               commentsStr += "/* eslint-disable */ /* spell-checker: disable */\n";
-
-              console.log(commentsStr);
 
               for (const file of chunk.files) {
                 compilation.updateAsset(file, old => {
@@ -117,7 +124,7 @@ module.exports = {
         use: {
           loader: "ts-loader",
         },
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
     ],
   },

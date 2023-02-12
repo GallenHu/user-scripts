@@ -21,7 +21,5 @@
     "GM_getValue",
     "GM_notification"
   ],
-  "updateURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
-  "downloadURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
   "icon": "https://i.loli.net/2020/02/11/sluFx1NIW9zCLS6.png"
 }

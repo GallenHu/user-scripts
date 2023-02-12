@@ -4,7 +4,5 @@
   "version": "0.1",
   "match": ["*://www.xunniufile.com/*", "*://www.xunniupan.co/*"],
   "grant": ["GM_registerMenuCommand", "unsafeWindow"],
-  "updateURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
-  "downloadURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
   "icon": "https://www.baidu.com/favicon.ico"
 }
