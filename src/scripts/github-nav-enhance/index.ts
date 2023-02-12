@@ -44,7 +44,7 @@ function modifyGitlab() {
   }
 }
 
-if (UrlUtils.host.endsWith("github.com")) {
+if (UrlUtils.isDomain("github.com")) {
   if ((window as any).onurlchange === null) {
     window.addEventListener("urlchange", modifyGithub);
   }

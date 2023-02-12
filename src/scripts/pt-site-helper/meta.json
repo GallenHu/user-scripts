@@ -1,0 +1,27 @@
+{
+  "name": "PT助手",
+  "description": "PT站助手:后台签到,复制链接",
+  "version": "0.1",
+  "match": [
+    "*://*.m-team.cc/*",
+    "*://pterclub.com/*",
+    "*://ourbits.club/*",
+    "*://hdhome.org/*",
+    "*://lemonhd.org/*",
+    "*://pthome.net/*",
+    "*://www.beitai.pt/*"
+  ],
+  "require": ["https://cdn.staticfile.org/jquery/1.12.2/jquery.min.js"],
+  "grant": [
+    "window.onurlchange",
+    "GM_registerMenuCommand",
+    "GM_xmlhttpRequest",
+    "GM_setClipboard",
+    "GM_setValue",
+    "GM_getValue",
+    "GM_notification"
+  ],
+  "updateURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
+  "downloadURL": "https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js",
+  "icon": "https://i.loli.net/2020/02/11/sluFx1NIW9zCLS6.png"
+}
