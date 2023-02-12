@@ -4,7 +4,8 @@ import RequestUtils from "../../utils/request.utils";
 const host = UrlUtils.host;
 const origin = UrlUtils.origin;
 
-const isListPage = UrlUtils.location.pathname.indexOf("torrent") > -1;
+const domBody = document.querySelector("body") as HTMLElement;
+const isListPage = domBody.innerText.indexOf("下一页") > -1 || domBody.innerText.indexOf("下一頁") > -1;
 const isDetailPage = UrlUtils.location.pathname.indexOf("detail") > -1;
 
 const isSite_pter = host.indexOf("pter") > -1;
@@ -238,6 +239,7 @@ function easyCopyLink() {
 
 function enlargeThumbnail() {
   const enable = GM_getValue("enlargeThumbnail");
+  console.log("enlargeThumbnail", enable);
 
   if (enable) {
     function setSize(size: string) {
