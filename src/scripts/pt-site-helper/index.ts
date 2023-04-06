@@ -150,11 +150,12 @@ function easyCopyLink() {
     });
   }
 
+  // pter
   function copy3() {
     var $check = $("td:contains('种子链接')");
     var $td = $check.next();
     var ahref = $td.find("a").attr("href");
-    var urlTxt = ahref.indexOf("http") === 0 ? ahref : origin + ahref;
+    var urlTxt = ahref.indexOf("http") === 0 ? ahref : origin + '/' + ahref;
     $td.prepend(['<input id="downloadurl" value="' + urlTxt + '" style="width:700px">', "<br><br>"].join(""));
 
     $("body").on("click", "#downloadurl", function () {
