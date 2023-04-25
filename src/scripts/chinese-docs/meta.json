@@ -1,0 +1,7 @@
+{
+  "name": "查看中文文档",
+  "description": "为常见的开发者官方文档增加中文文档跳转链接",
+  "version": "0.1",
+  "match": ["*://rxjs.dev/*"],
+  "icon": "https://rxjs.tech/assets/images/favicons/favicon.ico"
+}
