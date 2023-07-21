@@ -1,0 +1,10 @@
+{
+  "name": "Alist 生成 M3U",
+  "description": "在 Alist 文件列表页生成 M3U 播放列表，可在支持的播放器（如 Kodi）中使用",
+  "version": "0.1",
+  "match": ["*://*/*"],
+  "require": ["https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"],
+  "resource": [],
+  "grant": [],
+  "icon": "https://alist.nn.ci/logo.svg"
+}
