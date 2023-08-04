@@ -12,7 +12,7 @@ function modifyGithub() {
     <li>
       <a href="https://github.com/${userName}?tab=repositories" data-view-component="true" class="AppHeader-context-item">
         <span class="AppHeader-context-item-label">
-          Your repositories
+          Repositories
         </span>
       </a>
     </li>
@@ -23,7 +23,7 @@ function modifyGithub() {
     <li>
       <a href="https://github.com/${userName}?tab=stars" data-view-component="true" class="AppHeader-context-item">
         <span class="AppHeader-context-item-label">
-          Your stars
+          Stars
         </span>
       </a>
     </li>
@@ -34,7 +34,7 @@ function modifyGithub() {
     <li>
       <a href="https://github.com/settings/organizations" data-view-component="true" class="AppHeader-context-item">
         <span class="AppHeader-context-item-label">
-          Your organizations
+          Organizations
         </span>
       </a>
     </li>
@@ -45,7 +45,7 @@ function modifyGithub() {
     <li>
       <a href="https://gist.github.com/mine" data-view-component="true" class="AppHeader-context-item">
         <span class="AppHeader-context-item-label">
-          Your gists
+          Gists
         </span>
       </a>
     </li>
