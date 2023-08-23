@@ -1,0 +1,10 @@
+{
+  "name": "ElementUI website anchor",
+  "description": "为 ElementUI 文档官网组件页增加内页跳转锚点",
+  "version": "0.1",
+  "match": ["https://element.eleme.cn/*"],
+  "require": [],
+  "resource": [],
+  "grant": [],
+  "icon": "https://element.eleme.cn/favicon.ico"
+}
