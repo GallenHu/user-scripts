@@ -1,6 +1,4 @@
 default:
-	git config user.name "Gallen.Hu"
-	git config user.email "gallenmbp@gmail.com"
 	curl -OL https://ghproxy.com/https://raw.githubusercontent.com/Hinpc/static/master/.gitignore
 
 nvm:

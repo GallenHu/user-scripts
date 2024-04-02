@@ -1,0 +1,14 @@
+{
+  "name": "e.juejin.cn快速切换GitHub语言",
+  "description": "为e.juejin.cn增加常用的语言切换按钮",
+  "version": "0.1",
+  "match": [
+    "*://e.juejin.cn/*"
+  ],
+  "grant": [
+    "window.onurlchange",
+    "unsafeWindow"
+  ],
+  "run-at": "document-end",
+  "icon": "https://lf-cdn-tos.bytescm.com/obj/static/xitu_extension/static/favicons/favicon.ico"
+}
