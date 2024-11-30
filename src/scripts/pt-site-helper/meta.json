@@ -1,7 +1,7 @@
 {
   "name": "PT助手",
   "description": "PT站助手:后台签到,复制链接",
-  "version": "0.1",
+  "version": "0.2",
   "match": [
     "*://*.m-team.cc/*",
     "*://pterclub.com/*",
@@ -11,7 +11,9 @@
     "*://pthome.net/*",
     "*://www.beitai.pt/*"
   ],
-  "require": ["https://cdn.staticfile.org/jquery/1.12.2/jquery.min.js"],
+  "require": [
+    "https://cdn.staticfile.org/jquery/1.12.2/jquery.min.js"
+  ],
   "grant": [
     "window.onurlchange",
     "GM_registerMenuCommand",
