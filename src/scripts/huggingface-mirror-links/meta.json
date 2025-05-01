@@ -1,0 +1,10 @@
+{
+    "name": "Hugging Face Mirror Links",
+    "namespace": "http://tampermonkey.net/",
+    "version": "0.1",
+    "description": "Add navigation buttons to Hugging Face project pages for quick access to mirror sites",
+    "author": "gallenhu",
+    "match": "https://huggingface.co/*",
+    "run-at": "document-end",
+    "grant": "none"
+}

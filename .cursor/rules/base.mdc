@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+`src/scripts` 文件夹下的每一个子文件夹存放一个 TypeScript 脚本的源代码，
+`meta.json` 用于生成脚本的头部注释。
