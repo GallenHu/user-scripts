@@ -36,5 +36,7 @@ function addNavigationButtons(): void {
   }
 }
 
-// Run the function when the DOM is ready
-addNavigationButtons();
+setTimeout(() => {
+  // Run the function when the DOM is ready
+  addNavigationButtons();
+}, 1000);
