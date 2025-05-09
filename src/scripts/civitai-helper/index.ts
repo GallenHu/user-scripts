@@ -15,7 +15,7 @@
   // 初始化函数：查找并监视所有"Show"按钮
   const init = (): void => {
     const buttons = document.querySelectorAll<HTMLButtonElement>(
-      ".mantine-Stack-root > button.mantine-UnstyledButton-root.mantine-Button-root"
+      "button.mantine-UnstyledButton-root.mantine-Button-root"
     );
 
     buttons.forEach(node => {
