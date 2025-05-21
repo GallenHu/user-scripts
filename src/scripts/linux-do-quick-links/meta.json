@@ -1,0 +1,9 @@
+{
+  "name": "Linux.do 快捷链接",
+  "description": "为 Linux.do 增加常用的快捷链接",
+  "version": "0.1",
+  "match": ["*://linux.do/*"],
+  "grant": ["window.onurlchange", "unsafeWindow"],
+  "run-at": "document-end",
+  "icon": "https://linux.do/uploads/default/optimized/3X/9/d/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32.png"
+}
