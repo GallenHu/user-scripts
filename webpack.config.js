@@ -132,6 +132,7 @@ module.exports = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
+        exclude: [/lanhu-password-fill/],
         terserOptions: {
           format: {
             // 要保留的注释
