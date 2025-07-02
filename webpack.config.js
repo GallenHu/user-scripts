@@ -97,7 +97,17 @@ class MetaPlugin {
 }
 
 const getEntries = () => {
-  const entries = new Map(fs.readdirSync(scriptsFolder).map(dir => [dir, `${scriptsFolder}/${dir}/index.ts`]));
+  const entries = new Map();
+  fs.readdirSync(scriptsFolder).forEach(dir => {
+    const indexPath = `${scriptsFolder}/${dir}/index.ts`;
+    const indexJsPath = `${scriptsFolder}/${dir}/index.js`;
+
+    if (fs.existsSync(indexPath)) {
+      entries.set(dir, indexPath);
+    } else if (fs.existsSync(indexJsPath)) {
+      entries.set(dir, indexJsPath);
+    }
+  });
   return Object.fromEntries(entries);
 };
 
@@ -129,7 +139,7 @@ module.exports = {
     ],
   },
   optimization: {
-    minimize: true,
+    minimize: false, // true
     minimizer: [
       new TerserPlugin({
         exclude: [/lanhu-password-fill/],

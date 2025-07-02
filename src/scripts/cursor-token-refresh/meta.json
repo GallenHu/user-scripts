@@ -1,0 +1,11 @@
+{
+  "name": "Cursor Token获取器",
+  "description": "使用GM_xmlhttpRequest获取Cursor会话token",
+  "version": "0.1",
+  "author": "you",
+  "homepage": "https://linux.do/t/topic/742276",
+  "match": ["https://www.cursor.com/*", "https://cursor.com/*"],
+  "grant": ["GM_xmlhttpRequest", "GM_setValue", "GM_getValue"],
+  "connect": ["api2.cursor.sh", "cursor.sh"],
+  "icon": ""
+}
