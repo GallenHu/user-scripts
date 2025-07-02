@@ -13,4 +13,99 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/search-engine-jump.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports["search-engine-jump"]=e():t["search-engine-jump"]=e()}(this,(()=>(()=>{"use strict";var t={};const e=new class{constructor(){this.location={},this.host="",this.origin="",this.location=window.location,this.host=this.location.host,this.origin=this.location.origin}isDomain(t){return this.host.endsWith(t)}getQueryFromHash(t){const e=window.location.hash;if(!e)return null;const o=e.substring(e.indexOf("?"));return new URLSearchParams(o).get(t)}};return e.host.endsWith("google.com")?function(){var t;const e=document.querySelector("input.gLFyf"),o=[{text:"百度一下",class:"g-baidu",link:"https://www.baidu.com/s?wd="},{text:"必应搜索",class:"g-bing",link:"https://www.bing.com/search?q="}];o.forEach(((t,e)=>{var o;const n=`<button style="position: absolute; right: ${-120*(e+1)}px; top: 0; background: #fff; text-align: center; width: 100px; height: 38px; border: 1px solid transparent; box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%); color: #1a73e8; border-radius: 24px;cursor:pointer;" class="${t.class}" type="button">${t.text}</button>`;null===(o=document.querySelector(".A8SBwf"))||void 0===o||o.insertAdjacentHTML("beforeend",n)})),null===(t=document.querySelector(".tsf"))||void 0===t||t.addEventListener("click",(t=>{const n=Array.from(t.target.classList),s=o.find((t=>n.includes(t.class)));s&&window.open(s.link+e.value)}))}():e.host.endsWith("baidu.com")&&function(){var t;const e=document.querySelector("#kw"),o=[{text:"Google",class:"g-google",link:"https://www.google.com/search?q="},{text:"必应搜索",class:"g-bing",link:"https://www.bing.com/search?q="}];o.forEach((t=>{var e;const o=`<span style="margin-left:10px" class="bg s_btn_wr"><input class="${t.class}" type="button" value="${t.text}" style="cursor: pointer; width: 112px; height: 40px; line-height: 41px; line-height: 40px9; background-color: #4e6ef2; border-radius: 10px; font-size: 17px; box-shadow: none; font-weight: 400; border: 0; outline: 0; letter-spacing: normal; color: #fff; text-align: center;"></span>`;null===(e=document.querySelector("#form"))||void 0===e||e.insertAdjacentHTML("beforeend",o)})),null===(t=document.querySelector(".head_wrapper #form"))||void 0===t||t.addEventListener("click",(t=>{const n=Array.from(t.target.classList),s=o.find((t=>n.includes(t.class)));s&&window.open(s.link+e.value)}))}(),t=t.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["search-engine-jump"] = factory();
+	else
+		root["search-engine-jump"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+;// ./src/utils/url.utils.ts
+class UrlUtils {
+    constructor() {
+        this.location = {};
+        this.host = "";
+        this.origin = "";
+        this.location = window.location;
+        this.host = this.location.host;
+        this.origin = this.location.origin;
+    }
+    isDomain(domain) {
+        return this.host.endsWith(domain);
+    }
+    getQueryFromHash(key) {
+        const hash = window.location.hash;
+        if (!hash) {
+            return null;
+        }
+        const search = hash.substring(hash.indexOf("?"));
+        const urlSearchParams = new URLSearchParams(search);
+        return urlSearchParams.get(key);
+    }
+}
+/* harmony default export */ const url_utils = (new UrlUtils());
+
+;// ./src/scripts/search-engine-jump/index.ts
+
+function modifyGoogle() {
+    var _a;
+    const $ipt = document.querySelector("input.gLFyf");
+    const btns = [
+        { text: "百度一下", class: "g-baidu", link: "https://www.baidu.com/s?wd=" },
+        { text: "必应搜索", class: "g-bing", link: "https://www.bing.com/search?q=" },
+    ];
+    btns.forEach((btn, index) => {
+        var _a;
+        const styleText = `position: absolute; right: ${-120 * (index + 1)}px; top: 0; background: #fff; text-align: center; width: 100px; height: 38px; border: 1px solid transparent; box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%); color: #1a73e8; border-radius: 24px;cursor:pointer;`;
+        const btnSearch = `<button style="${styleText}" class="${btn.class}" type="button">${btn.text}</button>`;
+        (_a = document.querySelector(".A8SBwf")) === null || _a === void 0 ? void 0 : _a.insertAdjacentHTML("beforeend", btnSearch);
+    });
+    (_a = document.querySelector(".tsf")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", (e) => {
+        const target = Array.from(e.target.classList);
+        const findBtn = btns.find(item => target.includes(item.class));
+        if (findBtn) {
+            window.open(findBtn.link + $ipt.value);
+        }
+    });
+}
+function modifyBaidu() {
+    var _a;
+    const $ipt = document.querySelector("#kw");
+    const btns = [
+        { text: "Google", class: "g-google", link: "https://www.google.com/search?q=" },
+        { text: "必应搜索", class: "g-bing", link: "https://www.bing.com/search?q=" },
+    ];
+    const styleText = "cursor: pointer; width: 112px; height: 40px; line-height: 41px; line-height: 40px9; background-color: #4e6ef2; border-radius: 10px; font-size: 17px; box-shadow: none; font-weight: 400; border: 0; outline: 0; letter-spacing: normal; color: #fff; text-align: center;";
+    btns.forEach(btn => {
+        var _a;
+        const btnSearch = `<span style="margin-left:10px" class="bg s_btn_wr"><input class="${btn.class}" type="button" value="${btn.text}" style="${styleText}"></span>`;
+        (_a = document.querySelector("#form")) === null || _a === void 0 ? void 0 : _a.insertAdjacentHTML("beforeend", btnSearch);
+    });
+    (_a = document.querySelector(".head_wrapper #form")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", e => {
+        const target = Array.from(e.target.classList);
+        const findBtn = btns.find(item => target.includes(item.class));
+        if (findBtn) {
+            window.open(findBtn.link + $ipt.value);
+        }
+    });
+}
+if (url_utils.host.endsWith("google.com")) {
+    modifyGoogle();
+}
+else if (url_utils.host.endsWith("baidu.com")) {
+    modifyBaidu();
+}
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

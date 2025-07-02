@@ -12,4 +12,47 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/element-ui-anchor.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["element-ui-anchor"]=t():e["element-ui-anchor"]=t()}(this,(()=>(()=>{"use strict";var e={};let t="";return new MutationObserver((function(e,o){const n=window.location.hash.split("#")[1];if(n!==t){const e=document.querySelector("section.element-doc");if(e){const o=e.querySelectorAll("h3"),i=[];Array.from(o).forEach((e=>{const t=e.id,o=e.innerText;i.push(`<li><a href="#${n}#${t}">${o}</a></li>`)}));const r=document.createElement("ul");r.innerHTML=i.join(""),r.setAttribute("style","position: fixed; list-style: none; top: 80px; right: 10px; padding: 10px; max-height: 300px; overflow: auto; background: #fff; border: 1px solid #ddd;"),e.appendChild(r),t=n}}})).observe(document.body,{subtree:!0,childList:!0}),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["element-ui-anchor"] = factory();
+	else
+		root["element-ui-anchor"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+let lastHash = "";
+function callback(mutationsList, observer) {
+    const hash = window.location.hash.split("#")[1];
+    if (hash !== lastHash) {
+        const $mainSection = document.querySelector("section.element-doc");
+        if ($mainSection) {
+            const h3s = $mainSection.querySelectorAll("h3");
+            const html = [];
+            Array.from(h3s).forEach(dom => {
+                const id = dom.id;
+                const text = dom.innerText;
+                html.push(`<li><a href="#${hash}#${id}">${text}</a></li>`);
+            });
+            const menu = document.createElement("ul");
+            menu.innerHTML = html.join("");
+            menu.setAttribute("style", `position: fixed; list-style: none; top: 80px; right: 10px; padding: 10px; max-height: 300px; overflow: auto; background: #fff; border: 1px solid #ddd;`);
+            $mainSection.appendChild(menu);
+            lastHash = hash;
+        }
+    }
+}
+const observer = new MutationObserver(callback);
+observer.observe(document.body, { subtree: true, childList: true });
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

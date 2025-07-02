@@ -12,4 +12,52 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/civitai-helper.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["civitai-helper"]=t():e["civitai-helper"]=t()}(this,(()=>(()=>{"use strict";var e={};return(()=>{const e=new IntersectionObserver((t=>{for(const o of t)if(o.isIntersecting){const t=o.target;t.click(),e.unobserve(t)}})),t=()=>{document.querySelectorAll("button.mantine-UnstyledButton-root.mantine-Button-root").forEach((t=>{"Show"===t.innerText&&e.observe(t)}))},o=document.querySelector("#main");o&&new MutationObserver((()=>t())).observe(o,{childList:!0,subtree:!0}),t()})(),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["civitai-helper"] = factory();
+	else
+		root["civitai-helper"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+(() => {
+    "use strict";
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                const node = entry.target;
+                node.click();
+                observer.unobserve(node);
+            }
+        }
+    });
+    const init = () => {
+        const buttons = document.querySelectorAll("button.mantine-UnstyledButton-root.mantine-Button-root");
+        buttons.forEach(node => {
+            if (node.innerText === "Show") {
+                observer.observe(node);
+            }
+        });
+    };
+    const main = document.querySelector("#main");
+    if (main) {
+        new MutationObserver(() => init()).observe(main, {
+            childList: true,
+            subtree: true,
+        });
+    }
+    init();
+})();
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

@@ -15,4 +15,56 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/juejin-github-switch.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["juejin-github-switch"]=t():e["juejin-github-switch"]=t()}(this,(()=>(()=>{"use strict";var e={};function t(){const e=document.querySelector(".github-source .source-navbar"),t=document.querySelector(".github-source .category-selector"),o="quick-switch-lang";e&&t&&(["TypeScript","Python","Java","Go"].forEach((r=>{const c=document.createElement("div");c.className=o,c.setAttribute("style","margin-right:20px;cursor:pointer"),c.innerText=r,e.insertBefore(c,t)})),document.querySelectorAll("."+o).forEach((e=>{e.addEventListener("click",(e=>{!function(e){const t=document.querySelector("#app > div.layout.source-layout.utility > div.main-area > div.source.github-source.other-source.github > div.source-navbar > div.lang-selector > div.curr");null==t||t.click(),Array.from(document.querySelectorAll(".lang-list li")).some((t=>{if(t.innerText.toLowerCase()===e.toLowerCase())return t.click(),!0}))}(e.target.innerText)}))})))}return setTimeout((()=>{t()}),100),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["juejin-github-switch"] = factory();
+	else
+		root["juejin-github-switch"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function addButtons() {
+    const $wrap = document.querySelector(".github-source .source-navbar");
+    const $category = document.querySelector(".github-source .category-selector");
+    const className = "quick-switch-lang";
+    if ($wrap && $category) {
+        ["TypeScript", "Python", "Java", "Go"].forEach(lang => {
+            const b = document.createElement("div");
+            b.className = className;
+            b.setAttribute("style", "margin-right:20px;cursor:pointer");
+            b.innerText = lang;
+            $wrap.insertBefore(b, $category);
+        });
+        document.querySelectorAll("." + className).forEach(el => {
+            el.addEventListener("click", e => {
+                switchLang(e.target.innerText);
+            });
+        });
+    }
+    function switchLang(lang) {
+        const $dropdown = document.querySelector("#app > div.layout.source-layout.utility > div.main-area > div.source.github-source.other-source.github > div.source-navbar > div.lang-selector > div.curr");
+        $dropdown === null || $dropdown === void 0 ? void 0 : $dropdown.click();
+        Array.from(document.querySelectorAll(".lang-list li")).some((li) => {
+            if (li.innerText.toLowerCase() === lang.toLowerCase()) {
+                li.click();
+                return true;
+            }
+        });
+    }
+}
+setTimeout(() => {
+    addButtons();
+}, 100);
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

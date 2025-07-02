@@ -15,4 +15,33 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/skip-download-countdown.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,o){"object"==typeof exports&&"object"==typeof module?module.exports=o():"function"==typeof define&&define.amd?define([],o):"object"==typeof exports?exports["skip-download-countdown"]=o():e["skip-download-countdown"]=o()}(this,(()=>(()=>{"use strict";var e={};return GM_registerMenuCommand("跳过倒计时",(()=>{setTimeout((()=>{for(var e=unsafeWindow.setTimeout(";"),o=0;o<e;o++)unsafeWindow.clearTimeout(o);unsafeWindow.down_file_link()}),2e3)})),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["skip-download-countdown"] = factory();
+	else
+		root["skip-download-countdown"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+GM_registerMenuCommand("跳过倒计时", () => {
+    setTimeout(() => {
+        var highestTimeoutId = unsafeWindow.setTimeout(";");
+        for (var i = 0; i < highestTimeoutId; i++) {
+            unsafeWindow.clearTimeout(i);
+        }
+        unsafeWindow.down_file_link();
+    }, 2000);
+});
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

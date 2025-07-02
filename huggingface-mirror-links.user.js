@@ -14,4 +14,53 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/huggingface-mirror-links.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["huggingface-mirror-links"]=t():e["huggingface-mirror-links"]=t()}(this,(()=>(()=>{"use strict";var e={};function t(e,t){const o=document.createElement("a");return o.href=t,o.textContent=e,o.target="_blank",o.style.marginLeft="10px",o.style.padding="5px 10px",o.style.backgroundColor="#4CAF50",o.style.color="white",o.style.textDecoration="none",o.style.borderRadius="4px",o.style.fontSize="14px",o}return setTimeout((()=>{!function(){const e=window.location.pathname,o=`https://hf-mirror.com${e}`,n=`https://www.modelscope.cn${e}`,r=document.querySelector("h1");if(r){const e=t("HF Mirror",o),i=t("ModelScope",n);r.appendChild(e),r.appendChild(i)}}()}),1e3),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["huggingface-mirror-links"] = factory();
+	else
+		root["huggingface-mirror-links"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function createButton(text, url) {
+    const button = document.createElement("a");
+    button.href = url;
+    button.textContent = text;
+    button.target = "_blank";
+    button.style.marginLeft = "10px";
+    button.style.padding = "5px 10px";
+    button.style.backgroundColor = "#4CAF50";
+    button.style.color = "white";
+    button.style.textDecoration = "none";
+    button.style.borderRadius = "4px";
+    button.style.fontSize = "14px";
+    return button;
+}
+function addNavigationButtons() {
+    const currentPath = window.location.pathname;
+    const hfMirrorUrl = `https://hf-mirror.com${currentPath}`;
+    const modelscopeUrl = `https://www.modelscope.cn${currentPath}`;
+    const h1Element = document.querySelector("h1");
+    if (h1Element) {
+        const hfMirrorButton = createButton("HF Mirror", hfMirrorUrl);
+        const modelscopeButton = createButton("ModelScope", modelscopeUrl);
+        h1Element.appendChild(hfMirrorButton);
+        h1Element.appendChild(modelscopeButton);
+    }
+}
+setTimeout(() => {
+    addNavigationButtons();
+}, 1000);
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

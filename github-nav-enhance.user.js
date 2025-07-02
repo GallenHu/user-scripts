@@ -15,4 +15,81 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/github-nav-enhance.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["github-nav-enhance"]=t():e["github-nav-enhance"]=t()}(this,(()=>(()=>{"use strict";var e={};return null===window.onurlchange&&window.addEventListener("urlchange",(function(){const e=document.querySelector('meta[name="user-login"]').getAttribute("content"),t=document.querySelector("nav ul[role='list']");if(t){if("1"===t.getAttribute("data-enhanced"))return;const n=[];n.push(`\n    <li>\n      <a href="https://github.com/${e}?tab=repositories" data-view-component="true" class="AppHeader-context-item">\n        <span class="AppHeader-context-item-label">\n          Repositories\n        </span>\n      </a>\n    </li>\n    `),n.push(`\n    <li>\n      <a href="https://github.com/${e}?tab=stars" data-view-component="true" class="AppHeader-context-item">\n        <span class="AppHeader-context-item-label">\n          Stars\n        </span>\n      </a>\n    </li>\n    `),n.push('\n    <li>\n      <a href="https://github.com/settings/organizations" data-view-component="true" class="AppHeader-context-item">\n        <span class="AppHeader-context-item-label">\n          Organizations\n        </span>\n      </a>\n    </li>\n    '),n.push('\n    <li>\n      <a href="https://gist.github.com/mine" data-view-component="true" class="AppHeader-context-item">\n        <span class="AppHeader-context-item-label">\n          Gists\n        </span>\n      </a>\n    </li>\n    '),n.push('\n    <li>\n      <a href="javascript:void(0)" data-view-component="true" class="AppHeader-context-item">\n        <span class="AppHeader-context-item-label"></span>\n      </a>\n    </li>\n    '),t.innerHTML+=n.join(""),t.setAttribute("data-enhanced","1")}})),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["github-nav-enhance"] = factory();
+	else
+		root["github-nav-enhance"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function modifyGithub() {
+    const userName = document.querySelector('meta[name="user-login"]').getAttribute("content");
+    const nav = document.querySelector("nav ul[role='list']");
+    if (nav) {
+        if (nav.getAttribute("data-enhanced") === "1")
+            return;
+        const menus = [];
+        menus.push(`
+    <li>
+      <a href="https://github.com/${userName}?tab=repositories" data-view-component="true" class="AppHeader-context-item">
+        <span class="AppHeader-context-item-label">
+          Repositories
+        </span>
+      </a>
+    </li>
+    `);
+        menus.push(`
+    <li>
+      <a href="https://github.com/${userName}?tab=stars" data-view-component="true" class="AppHeader-context-item">
+        <span class="AppHeader-context-item-label">
+          Stars
+        </span>
+      </a>
+    </li>
+    `);
+        menus.push(`
+    <li>
+      <a href="https://github.com/settings/organizations" data-view-component="true" class="AppHeader-context-item">
+        <span class="AppHeader-context-item-label">
+          Organizations
+        </span>
+      </a>
+    </li>
+    `);
+        menus.push(`
+    <li>
+      <a href="https://gist.github.com/mine" data-view-component="true" class="AppHeader-context-item">
+        <span class="AppHeader-context-item-label">
+          Gists
+        </span>
+      </a>
+    </li>
+    `);
+        menus.push(`
+    <li>
+      <a href="javascript:void(0)" data-view-component="true" class="AppHeader-context-item">
+        <span class="AppHeader-context-item-label"></span>
+      </a>
+    </li>
+    `);
+        nav.innerHTML += menus.join("");
+        nav.setAttribute("data-enhanced", "1");
+    }
+}
+if (window.onurlchange === null) {
+    window.addEventListener("urlchange", modifyGithub);
+}
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

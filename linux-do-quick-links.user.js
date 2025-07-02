@@ -15,4 +15,46 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/linux-do-quick-links.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["linux-do-quick-links"]=t():e["linux-do-quick-links"]=t()}(this,(()=>(()=>{"use strict";var e={};return window.addEventListener("load",(()=>{!function(){const e=document.querySelector("ul.icons.d-header-icons");if(e){console.log("$wrap found");const t=document.createElement("li");t.className="search-dropdown header-dropdown-toggle";const n=document.createElement("a");n.className="btn no-text btn-icon icon btn-flat",n.href="https://linux.do/u/gallen/activity/likes-given",n.title="我的点赞",n.setAttribute("type","button"),jQuery(n).append('<svg class="fa d-icon d-icon-heart svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#heart"></use></svg>'),t.appendChild(n),jQuery(e).prepend(t)}else console.error("$wrap not found")}()})),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["linux-do-quick-links"] = factory();
+	else
+		root["linux-do-quick-links"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function addHeaderButtons() {
+    const $wrap = document.querySelector("ul.icons.d-header-icons");
+    if ($wrap) {
+        console.log("$wrap found");
+        const $li = document.createElement("li");
+        $li.className = "search-dropdown header-dropdown-toggle";
+        const $a = document.createElement("a");
+        $a.className = "btn no-text btn-icon icon btn-flat";
+        $a.href = "https://linux.do/u/gallen/activity/likes-given";
+        $a.title = "我的点赞";
+        $a.setAttribute("type", "button");
+        jQuery($a).append('<svg class="fa d-icon d-icon-heart svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#heart"></use></svg>');
+        $li.appendChild($a);
+        jQuery($wrap).prepend($li);
+    }
+    else {
+        console.error("$wrap not found");
+    }
+}
+window.addEventListener("load", () => {
+    addHeaderButtons();
+});
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

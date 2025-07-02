@@ -12,4 +12,31 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/chinese-docs.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["chinese-docs"]=t():e["chinese-docs"]=t()}(this,(()=>(()=>{"use strict";var e={};return function(){const e=document.querySelector("aio-shell > mat-toolbar > mat-toolbar-row:nth-child(2) > aio-top-menu > ul"),{pathname:t}=window.location,o=`<li class="ng-star-inserted"><a class="nav-link" href="https://rxjs.tech${t}" title="中文版">中文版</a></li>`;null==e||e.insertAdjacentHTML("beforeend",o)}(),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["chinese-docs"] = factory();
+	else
+		root["chinese-docs"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function enhanceRxJS() {
+    const $ul = document.querySelector("aio-shell > mat-toolbar > mat-toolbar-row:nth-child(2) > aio-top-menu > ul");
+    const { pathname } = window.location;
+    const btnSearch = `<li class="ng-star-inserted"><a class="nav-link" href="https://rxjs.tech${pathname}" title="中文版">中文版</a></li>`;
+    $ul === null || $ul === void 0 ? void 0 : $ul.insertAdjacentHTML("beforeend", btnSearch);
+}
+enhanceRxJS();
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

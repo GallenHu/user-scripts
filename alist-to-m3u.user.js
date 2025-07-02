@@ -13,4 +13,85 @@
 // @downloadURL      https://fastly.jsdelivr.net/gh/gallenhu/user-scripts@release/alist-to-m3u.user.js
 // ==/UserScript==
 /* eslint-disable */ /* spell-checker: disable */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["alist-to-m3u"]=t():e["alist-to-m3u"]=t()}(this,(()=>(()=>{"use strict";var e={};function t(){const e=document.querySelectorAll(".list a.list-item"),t=[];e.forEach((e=>{var o;let n=e.href;const i=(null===(o=window.ALIST)||void 0===o?void 0:o.base_path)||"/",r=window.location.origin+i;n=n.replace(r,r+"d/");const l=e.querySelector(".name"),u=l?l.innerText:"";t.push({href:n,name:u})}));const o=function(e){const t=["#EXTM3U"];return(null==e?void 0:e.length)&&e.forEach((e=>{t.push(`#EXTINF:-1,${e.name}`),t.push(e.href)})),t.join("\n")}(t),n=new Blob([o],{type:"text/plain;charset=utf-8"});window.saveAs(n,"playlist.m3u")}let o=()=>{document.querySelectorAll(".list a.list-item").length&&(!function(){const e=document.querySelector("body"),o=document.createElement("button");o.id="downloadM3U",o.classList.add("hope-button"),o.innerText="生成M3U",o.setAttribute("style","cursor:pointer;position:fixed;top:10px;left:10px;font-size:14px;padding: 4px 8px;border: 1px solid #96c7f2;background:#fff;"),null==e||e.appendChild(o),o.addEventListener("click",t)}(),o=()=>null)};return function(){if(!(((null===(e=document.querySelector('meta[name="generator"]'))||void 0===e?void 0:e.getAttribute("content"))||"").toLowerCase().indexOf("alist")>-1))return!1;var e;const t=document.querySelector("#root");if(t){new MutationObserver(o).observe(t,{childList:!0,subtree:!0})}}(),e=e.default})()));
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["alist-to-m3u"] = factory();
+	else
+		root["alist-to-m3u"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+function checkGenerator() {
+    var _a;
+    const generator = ((_a = document.querySelector('meta[name="generator"]')) === null || _a === void 0 ? void 0 : _a.getAttribute("content")) || "";
+    return generator.toLowerCase().indexOf("alist") > -1;
+}
+function generatorM3UContent(playList) {
+    const xml = ["#EXTM3U"];
+    if (playList === null || playList === void 0 ? void 0 : playList.length) {
+        playList.forEach(obj => {
+            xml.push(`#EXTINF:-1,${obj.name}`);
+            xml.push(obj.href);
+        });
+    }
+    return xml.join("\n");
+}
+function insertDownloadButton() {
+    const $body = document.querySelector("body");
+    const button = document.createElement("button");
+    button.id = "downloadM3U";
+    button.classList.add("hope-button");
+    button.innerText = "生成M3U";
+    button.setAttribute("style", "cursor:pointer;position:fixed;top:10px;left:10px;font-size:14px;padding: 4px 8px;border: 1px solid #96c7f2;background:#fff;");
+    $body === null || $body === void 0 ? void 0 : $body.appendChild(button);
+    button.addEventListener("click", onClickM3UDownloadButton);
+}
+function onClickM3UDownloadButton() {
+    const list = document.querySelectorAll(".list a.list-item");
+    const output = [];
+    list.forEach(link => {
+        var _a;
+        let href = link.href;
+        const basePath = ((_a = window.ALIST) === null || _a === void 0 ? void 0 : _a.base_path) || "/";
+        const origin = window.location.origin;
+        const alistRootUri = origin + basePath;
+        href = href.replace(alistRootUri, alistRootUri + "d/");
+        const nameDom = link.querySelector(".name");
+        const name = nameDom ? nameDom.innerText : "";
+        output.push({ href, name });
+    });
+    const xml = generatorM3UContent(output);
+    const blob = new Blob([xml], { type: "text/plain;charset=utf-8" });
+    window.saveAs(blob, "playlist.m3u");
+}
+let checkList = () => {
+    const list = document.querySelectorAll(".list a.list-item");
+    if (list.length) {
+        insertDownloadButton();
+        checkList = () => null;
+    }
+};
+function start() {
+    if (!checkGenerator()) {
+        return false;
+    }
+    const $root = document.querySelector("#root");
+    if ($root) {
+        const observer = new MutationObserver(checkList);
+        observer.observe($root, { childList: true, subtree: true });
+    }
+}
+start();
+
+__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});
